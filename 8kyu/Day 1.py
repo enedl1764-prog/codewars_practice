@@ -46,5 +46,47 @@ def count_by(x, n):
 
 # ----------------------------------------------------------------------------------------------
 
-# >> 3. 
+# >> 3. 문제 해석
+
+# DNA(데옥시리보핵산) 생물학적 시스템에서 정보 저장의 주된 분자
+
+# 네 가지 염기(base)로 구성:
+# Guanine → 'G'
+# Cytosine → 'C'
+# Adenine → 'A'
+# Thymine → 'T'
+
+# RNA(리보핵산) 세포 안에서 주요 메신저 분자
+# DNA와 화학 구조가 조금 다르며, Thymine(T) 없음, DNA의 Thymine(T)은 RNA에서는 **Uracil(U)**로 대체됨
+
+# 함수 요구 사항
+# DNA 문자열을 입력으로 받아 RNA 문자열로 변환하는 함수 작성
+
+# 변환 규칙:
+# 'G' → 'G'
+# 'C' → 'C'
+# 'A' → 'A'
+# 'T' → 'U'
+
+# 입력 문자열 길이는 임의이며, 빈 문자열도 가능
+
+# 입력은 항상 유효하며, 'G', 'C', 'A', 'T'만 포함
+
+
+# 3-1. 내 방법
+
+# def dna_to_rna(dna):
+#     return dna.replace('T', 'U')
+
+# 3-2. 예시 1 (join 메서드와 리스트 내포 활용)
+
+def dna_to_rna(dna):
+    return ''.join(['U' if x == 'T' else x for x in dna])
+
+# 3-3. 예시 2 (정규식 활용)
+
+import re
+def dna_to_rna(dna):
+    return re.sub('T', 'U', dna) # re.sub("찾을문자","바꿀문자", "전체문자열")
+
 
